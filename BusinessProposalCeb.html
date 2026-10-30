@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="ceb">
+  <!-- PAGE SETTINGS AND STYLES -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Proposisyon sa Tahi Circle alang sa pagpalit og panapton, gipaambit nga pagtahi, ug boluntaryong mga sesyon sa pagkat-on.">
+    <title>Tahi Circle Proposisyon alang sa mga Kustomer</title>
+    <style>
+    /* GLOBAL STYLES */
+    * {
+      box-sizing:border-box;
+    }
+
+    html {
+      scroll-behavior:smooth;
+      scroll-padding-top:90px;
+    }
+
+    body {
+      margin:0;
+      background:#faf7f3;
+      color:#302e2b;
+      font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    /* HEADER AND BUTTONS */
+    header {
+      background:#fffdf9;
+      border-bottom:1px solid #e9ddd5;
+      padding:14px 5vw;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      position:sticky;
+      top:0;
+      z-index:2;
+    }
+
+    .brand {
+      font:700 25px Georgia,serif;
+      color:#74504f;
+    }
+
+    .eyebrow {
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:#705f58;
+    }
+
+    .tools {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    button,.button {
+      border:1px solid #b58b83;
+      background:#fff;
+      color:#593b37;
+      border-radius:7px;
+      padding:10px 15px;
+      font:600 13px system-ui;
+      cursor:pointer;
+      text-decoration:none;
+    }
+
+    button.primary {
+      background:#805b57;
+      color:white;
+    }
+
+    /* INTRODUCTION */
+    .hero {
+      max-width:1050px;
+      margin:auto;
+      padding:65px 25px 45px;
+    }
+
+    .hero h1 {
+      font:normal clamp(40px,7vw,70px)/1.1 Georgia,serif;
+      margin:15px 0;
+      color:#463934;
+    }
+
+    .hero p {
+      max-width:720px;
+      font-size:19px;
+      color:#6c5c55;
+    }
+
+    .badge {
+      display:inline-block;
+      background:#eee4df;
+      border-radius:30px;
+      padding:5px 13px;
+      font-size:12px;
+      font-weight:650;
+    }
+
+    /* PAGE LAYOUT AND NAVIGATION */
+    .layout {
+      max-width:1100px;
+      display:grid;
+      grid-template-columns:210px 1fr;
+      gap:35px;
+      margin:0 auto 60px;
+      padding:0 25px;
+    }
+
+    nav {
+      position:sticky;
+      top:95px;
+      align-self:start;
+    }
+
+    nav a {
+      display:block;
+      border-left:2px solid #ddd0c8;
+      padding:10px 14px;
+      color:#69534c;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    nav a:hover,nav a:focus {
+      background:#eee5df;
+      border-color:#9d746c;
+    }
+
+    section {
+      background:white;
+      border:1px solid #e6ded7;
+      border-radius:12px;
+      padding:32px;
+      margin-bottom:25px;
+      scroll-margin-top:90px;
+    }
+
+    h2 {
+      font:normal 31px/1.25 Georgia,serif;
+      margin:0 0 24px;
+      color:#493b35;
+    }
+
+    h3 {
+      font-size:19px;
+      margin:28px 0 10px;
+    }
+
+    p {
+      margin:0 0 15px;
+    }
+
+    .bullet {
+      padding-left:23px;
+      position:relative;
+    }
+
+    .bullet:before {
+      content:"•";
+      position:absolute;
+      left:4px;
+      color:#9c7268;
+    }
+
+    .step {
+      padding-left:15px;
+      border-left:3px solid #d8b9ae;
+    }
+
+    /* TABLES AND PROJECT FIELDS */
+    .table-wrap {
+      overflow-x:auto;
+      margin:18px 0 22px;
+    }
+
+    table {
+      border-collapse:collapse;
+      width:100%;
+      font-size:14px;
+      min-width:440px;
+    }
+
+    th,td {
+      border:1px solid #ded6cf;
+      text-align:left;
+      padding:12px;
+      vertical-align:top;
+    }
+
+    th {
+      background:#efe7e0;
+      font-weight:650;
+    }
+
+    tbody tr:nth-child(even) {
+      background:#fcfaf8;
+    }
+
+    .field {
+      display:block;
+      font-size:14px;
+      font-weight:600;
+      margin:15px 0;
+    }
+
+    input,select {
+      width:100%;
+      border:1px solid #c9bfb6;
+      border-radius:5px;
+      background:#fffdfb;
+      padding:10px;
+      font:16px system-ui;
+      color:#302e2b;
+      margin-top:6px;
+    }
+
+    input:focus,select:focus,button:focus-visible,a:focus-visible {
+      outline:3px solid #bd9988;
+      outline-offset:2px;
+    }
+
+    td input {
+      min-width:120px;
+      font-size:14px;
+      margin:0;
+    }
+
+    .note {
+      font-size:13px;
+      color:#705e56;
+    }
+
+    footer {
+      text-align:center;
+      padding:25px;
+      background:#eee5de;
+      color:#69554b;
+      font-size:13px;
+    }
+
+    .status {
+      min-height:1.7em;
+      color:#6b5349;
+      font-size:13px;
+    }
+
+    #planner-note {
+      padding-bottom:8px;
+    }
+
+    /* MOBILE LAYOUT */
+    @media(max-width:760px) {
+      header {
+        position:static;
+        padding:16px 20px;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero {
+        padding:35px 20px 25px;
+      }
+
+      .layout {
+        display:block;
+        padding:0 15px;
+      }
+
+      nav {
+        position:static;
+        display:flex;
+        overflow:auto;
+        margin-bottom:20px;
+      }
+
+      nav a {
+        white-space:nowrap;
+        border-left:0;
+        border-bottom:2px solid #ddd0c8;
+      }
+
+      section {
+        padding:23px 20px;
+      }
+
+      h2 {
+        font-size:27px;
+      }
+
+    }
+
+    /* PRINT LAYOUT */
+    @media print {
+      @page {
+        size:A4;
+        margin:15mm;
+      }
+
+      body {
+        background:white;
+        font-size:10.5pt;
+        line-height:1.45;
+      }
+
+      header,nav,.hero,.tools,.status,#planner-note,footer {
+        display:none!important;
+      }
+
+      .layout {
+        display:block;
+        padding:0;
+        margin:0;
+        max-width:none;
+      }
+
+      section {
+        border:0;
+        border-radius:0;
+        padding:0;
+        margin:0;
+        break-before:page;
+      }
+
+      section:first-child {
+        break-before:auto;
+      }
+
+      h2 {
+        font-size:22pt;
+      }
+
+      h3 {
+        font-size:13pt;
+        break-after:avoid;
+      }
+
+      p,tr,.field {
+        break-inside:avoid;
+      }
+
+      table {
+        min-width:0;
+        font-size:9pt;
+      }
+
+      th,td {
+        padding:7px;
+      }
+
+      input,select {
+        border:0;
+        border-bottom:1px solid #aaa;
+        border-radius:0;
+        padding:4px 0;
+        background:none;
+        font-size:10pt;
+      }
+
+      input::placeholder {
+        color:transparent;
+      }
+
+      a {
+        color:inherit;
+        text-decoration:none;
+      }
+
+    }
+  </style>
+  </head>
+  <body>
+    <!-- BRAND NAME AND ACTION BUTTONS -->
+    <header>
+      <div>
+        <div class="brand">Tahi Circle</div>
+        <div class="eyebrow">Komunidad sa pagtahi ug pagkat-on</div>
+      </div>
+      <div class="tools">
+        <button id="print" class="primary">I-print o i-save isip PDF</button>
+        <button id="save">I-download ang mga tubag sa proyekto</button>
+      </div>
+    </header>
+    <div class="hero">
+      <span class="badge">Proposisyon alang sa kustomer · Mga kondisyon nga sabotan</span>
+      <h1>Usa ka dapit sa pagtahi<br>ug dungan nga paglambo.</h1>
+      <p>Magkat-on kita. Magtahi kita. Magbaligya kita. Maglambo kita.</p>
+      <p class="note">Alang sa mga hamtong nga nag-edad og 18 pataas. Ilha ang among gitanyag, susiha ang gisugyot nga mga kondisyon, ug planohi ang imong unang proyekto.</p>
+    </div>
+    <div class="layout">
+      <!-- SECTION NAVIGATION -->
+      <nav aria-label="Mga bahin sa proposisyon">
+        <a href="#section-1">Ang imbitasyon</a>
+        <a href="#section-2">Mga paliton ug bayranan</a>
+        <a href="#section-3">Pagplano og proyekto</a>
+      </nav>
+      <!-- PROPOSAL CONTENT -->
+      <main>
+        <p id="planner-note" class="note">Opsyonal ang pagpuno niini nga porma. Ang imong mga tubag magpabilin lamang niini nga panid; walay ipadala. I-download o i-print ang mga tubag sa dili pa isira kay dili kini awtomatikong ma-save.</p>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <!-- SECTION 1  THE INVITATION -->
+        <section id="section-1" aria-labelledby="title-1">
+          <h2 id="title-1">Tahi Circle Proposisyon alang sa mga Kustomer</h2>
+          <p>Usa ka gipaambit nga dapit diin ang mga kustomer sa panapton makakat-on ug makahimo sa ilang mga proyekto</p>
+          <p>Magkat-on kita. Magtahi kita. Magbaligya kita. Maglambo kita.</p>
+          <h3>Imbitasyon sa paghimo uban kanamo</h3>
+          <p>Giimbitar sa Tahi Circle ang mga hamtong nga nag-edad og 18 pataas sa pagpalit og panapton alang sa ilang proyekto, pagkat-on uban sa ubang mananahi, ug paggamit sa gipaambit nga mga makina ug gamit sa gitakdang mga sesyon. Makahimo ka og mga butang alang sa kaugalingong gamit o mga produkto nga imong ibaligya sa kaugalingon.</p>
+          <p>Ang among pangunang negosyo mao ang pagbaligya og panapton. Gitigom sa among komunidad ang mga kustomer aron magbinayloay og mga ideya, magpraktis sa pagtahi, ug magtinabangay. Boluntaryo ang pag-apil. Ang kita magdepende sa imong produkto, presyo, gasto, ug abilidad sa pagpangita og mamalitay.</p>
+          <h3>Mga butang nga imong magamit ug maapilan</h3>
+          <p class="bullet">Panapton ug mga suplay sa pagtahi nga ipahibalo ang presyo sa dili pa paliton o gamiton.</p>
+          <p class="bullet">Dungan nga pagkat-on ug pagpraktis sumala sa interes sa mga partisipante ug sa tabang nga anaa.</p>
+          <p class="bullet">Mga makina ug piniling gamit sa pagtahi atol sa gikumpirmang mga sesyon, depende sa pagkaanaa ug luwas nga paggamit niini.</p>
+          <p class="bullet">Usa ka matinabangong dapit sa pagplano, paghimo, ug paghisgot sa mga produkto sama sa gagmayng supot, bag, punda sa unlan, ug uban pang tinahi.</p>
+          <h3>Unsaon pagsugod</h3>
+          <p class="step">Isulti kanamo unsay gusto nimong himoon ug hisgoti ang gikinahanglang kahanas, materyales, ug kagamitan.</p>
+          <p class="step">Kumpirmaha ang gidaghanon ug presyo sa materyales, paagi sa pagbayad, ug bisan unsang bayad sa pagsuporta sa studio sa dili pa maggunting.</p>
+          <p class="step">Pagsabot og iskedyul sa studio, tun-i ang mga lagda sa paggamit sa kagamitan, ug himoa ang imong proyekto.</p>
+          <p class="step">Gamita ang imong nahuman nga produkto o ibaligya kini sa imong kaugalingon. Ikaw ang magtakda sa presyo ug moatiman sa imong mga kustomer.</p>
+          <p class="step">Sa halin nga sakop sa kasabotan, bayri ang nahibiling bayranan sa materyales ug ang gikasabotang bayad sa pagsuporta sa studio sumala sa mga kondisyon sa imong proyekto.</p>
+          <p>Dili kinahanglan nga mosaad ka og regular nga pagtambong o mosumite og sulat sa pagkalas. Ang paghunong sa pagtambong dili makakansela sa kasabotan sa pagpalit nga nahimo na.</p>
+        </section>
+        <!-- SECTION 2  PURCHASES AND STUDIO SUPPORT -->
+        <section id="section-2" aria-labelledby="title-2">
+          <h2 id="title-2">Mga Paliton ug Pagsuporta sa Studio</h2>
+          <h3>Panapton alang sa mga proyekto sa studio</h3>
+          <p>Ang mga proyektong himoon gamit ang pasilidad sa Tahi Circle mogamit og panapton nga gipalit sa Tahi Circle. Kini nga kondisyon alang lamang sa mga proyekto sa studio; gawas niini, gawasnon ka sa pagpalit ug paghimo sa ubang dapit. Pangutana bahin sa dugang nga mga suplay nga imong gikinahanglan sa dili pa magsugod.</p>
+          <p>Ang panapton nga gigamit sa pagpraktis, pagsulay sa paggunting, o wala molampos nga pagtahi kabahin gihapon sa imong gipalit. Walay dugang nga multa tungod sa pagkadaot sa panapton nga imo nang napalit. Lahi nga paliton ang mga materyales nga ipuli. Ang problema nga may kalabotan sa depektibong kagamitan o giya gikan sa studio susihon una sa dili pa magsabot og dugang nga bayranan.</p>
+          <h3>Pilia ang paagi sa pagbayad sa materyales</h3>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th scope="col">Kapilian</th>
+                <th scope="col">Mga sabotan sa dili pa gamiton</th>
+              </tr>
+              <tr>
+                <td>Bayad daan</td>
+                <td>Kumpirmaha ang presyo sa materyales ug bayad sa dili pa magsugod. Angay kini sa pagpraktis ug sa mga proyektong alang sa kaugalingong gamit.</td>
+              </tr>
+              <tr>
+                <td>Bayad human mahalin pinaagi sa daang kasabotan</td>
+                <td>Mahimo lamang kini kon klarong gitugotan alang sa usa ka piho nga proyekto. Isulat ang presyo sa materyales ug unsang hitabo sa pagbaligya ang magpasugod sa obligasyon sa pagbayad. Kon gikasabotan nga mobayad lamang human mahalin, walay takdang petsa sa pagbayad samtang wala pa mahalin ang produkto.</td>
+              </tr>
+              <tr>
+                <td>Laing gikasabotang iskedyul</td>
+                <td>Isulat ang bisan unsang hulugan o laing iskedyul sa pagbayad sa dili pa gamiton ang materyales.</td>
+              </tr>
+            </table>
+          </div>
+          <p>Alang sa mga proyektong bayran human mahalin, saboti kanus-a ihatag ang bayad human madawat ang kuwarta sa mamalitay, unsaon pagdumala sa paunang bayad ug pag-uli sa kuwarta, ug unsay buhaton kon ang produkto tipigan, ipanghatag, madaot, o biyaan. Kinahanglan og lahi nga kasabotan sa pagbayad ang materyales alang sa pagpraktis nga dili ibaligya.</p>
+          <h3>Bayad gikan sa mga halin nga sakop sa kasabotan</h3>
+          <p>Gisugyot sa Tahi Circle ang bayad sa pagsuporta sa studio gikan sa halin sa mga produktong gihimo gamit ang pasilidad niini. Makatabang kini sa bayranan sa kuryente, pag-ayo ug pagmintinar sa makina, ug gipaambit nga mga suplay. Wala pa matakda ang porsiyento; kinahanglan kini ipahibalo ug uyonan sa dili pa magsugod ang proyekto.</p>
+          <p>Gisugyot nga pagkalkulo: bayad sa pagsuporta sa studio = gikasabotang porsiyento × aktuwal nga presyo sa produkto human sa diskuwento, dili apil ang lahi nga bayad sa paghatod. Lahi ang bayranan sa panapton. Kinahanglang isulat sa rekord sa proyekto kon kini nga bayad mopuli ba sa bayad sa sesyon aron walay wala damhang dugang nga singil.</p>
+          <p>Alang sa pagpraktis o kaugalingong gamit, kumpirmaha una ang bisan unsang bayad sa paggamit sa studio sa dili pa magpa-iskedyul. Ang bayad nga gibase sa halin dili igo nga basihan sa gasto sa paggamit sa studio alang sa mga butang nga dili ibaligya.</p>
+          <h3>Imong mga hinimo ug kinitaan</h3>
+          <p>Ikaw ang tag-iya ug magbaligya sa imong mga hinimo. Ikaw ang mopili sa kustomer ug presyo ug moatiman sa paghatod ug mga pangutana o reklamo sa mamalitay. Ang imong mahibiling halin mao ang nadawat nga bayad minus sa materyales, gikasabotang bayad sa pagsuporta, ug uban nimong gasto. Gikan usab niini kuhaon ang bayad sa imong panahon ug kahago. Ang dili pag-apil dili awtomatikong mobalhin sa pagpanag-iya sa imong mga produkto ngadto sa studio o ubang partisipante.</p>
+        </section>
+        <!-- SECTION 3  FIRST PROJECT FORM -->
+        <section id="section-3" aria-labelledby="title-3">
+          <h2 id="title-3">Planohi ang Imong Unang Proyekto</h2>
+          <p>Gamita kini nga lista sa paghisgot sa imong unang proyekto uban sa Tahi Circle. Kini nga proposisyon usa ka imbitasyon sa pag-apil, dili usa ka nahuman nga kontrata sa pagpalit o pagkamiyembro. Kumpirmaha ang mga kondisyon sa lahi nga rekord sa proyekto sa dili pa gamiton ang materyales o kagamitan.</p>
+          <h3>Mga detalye sa proyekto</h3>
+          <label class="field">Ngalan sa partisipante<input name="field-1" type="text" autocomplete="off">
+          </label>
+          <label class="field">Numero o paagi sa pagkontak<input name="field-2" type="text" autocomplete="off">
+          </label>
+          <label class="field">Proyekto ug gidaghanon nga himoon<input name="field-3" type="text" autocomplete="off">
+          </label>
+          <label class="field">Katuyoan<select name="purpose">
+              <option value="">Pagpili og katuyoan</option>
+              <option>Kaugalingong gamit</option>
+              <option>Pagpraktis</option>
+              <option>Alang sa pagbaligya</option>
+            </select>
+          </label>
+          <label class="field">Gihangyong petsa o iskedyul sa sesyon<input name="field-4" type="text" autocomplete="off">
+          </label>
+          <h3>Mga gasto nga kumpirmahon</h3>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th scope="col">Butang</th>
+                <th scope="col">Gidaghanon o basihan</th>
+                <th scope="col">Gikasabotang kantidad</th>
+              </tr>
+              <tr>
+                <td>Panapton</td>
+                <td><input aria-label="Gidaghanon o basihan alang sa Panapton" name="field-5" type="text"></td>
+                <td><input aria-label="Gikasabotang kantidad alang sa Panapton" name="field-6" type="text"></td>
+              </tr>
+              <tr>
+                <td>Ubang materyales sa proyekto</td>
+                <td><input aria-label="Gidaghanon o basihan alang sa Ubang materyales sa proyekto" name="field-7" type="text"></td>
+                <td><input aria-label="Gikasabotang kantidad alang sa Ubang materyales sa proyekto" name="field-8" type="text"></td>
+              </tr>
+              <tr>
+                <td>Bayad sa pagsuporta sa studio gikan sa halin nga sakop sa kasabotan</td>
+                <td><input aria-label="Gidaghanon o basihan alang sa Bayad sa pagsuporta sa studio gikan sa halin nga sakop sa kasabotan" name="field-9" type="text"></td>
+                <td><input aria-label="Gikasabotang kantidad alang sa Bayad sa pagsuporta sa studio gikan sa halin nga sakop sa kasabotan" name="field-10" type="text"></td>
+              </tr>
+              <tr>
+                <td>Bayad sa sesyon o paggamit kon adunay singil</td>
+                <td><input aria-label="Gidaghanon o basihan alang sa Bayad sa sesyon o paggamit kon adunay singil" name="field-11" type="text"></td>
+                <td><input aria-label="Gikasabotang kantidad alang sa Bayad sa sesyon o paggamit kon adunay singil" name="field-12" type="text"></td>
+              </tr>
+            </table>
+          </div>
+          <h3>Mga kondisyon sa pagbayad nga kumpirmahon</h3>
+          <label class="field">Pagbayad sa materyales<select name="payment">
+              <option value="">Pilia ang gikasabotang paagi</option>
+              <option>Bayad daan</option>
+              <option>Gitugotang bayad human mahalin</option>
+              <option>Laing gikasabotang iskedyul</option>
+            </select>
+          </label>
+          <label class="field">Hitabo nga magpasugod sa pagbayad ug takdang panahon sa paghatag niini<input name="field-13" type="text" autocomplete="off">
+          </label>
+          <label class="field">Paunang bayad pag-uli sa kuwarta ug gikanselang mga baligya<input name="field-14" type="text" autocomplete="off">
+          </label>
+          <label class="field">Mga wala mahalin o usbon ngadto sa kaugalingong gamit<input name="field-15" type="text" autocomplete="off">
+          </label>
+          <label class="field">Bayad sa studio ug kon mopuli ba kini sa bayad sa sesyon<input name="field-16" type="text" autocomplete="off">
+          </label>
+          <h3>Usa ka studio nga adunay pagtahod ug pagtinabangay</h3>
+          <p>Palihog magpa-iskedyul daan, sundon ang giya sa paggamit sa kagamitan, ibalik ang mga gamit sa ilang hustong dapit, ug ipahibalo dayon ang mga depekto. Pangayo og tabang sa dili pa gamiton ang kagamitan nga dili pa nimo pamilyar. Gidasig namo ang mapailobong pagpraktis, matinahurong tambag, ug pagplano sa produktong kaya ra himoon.</p>
+          <h3>Apil sa Tahi Circle</h3>
+          <p>Pagdala og ideya sa produkto ug kaandam sa pagkat-on. Hisgotan nato ang unang proyekto nga kaya nimong himoon, ipatin-aw ang presyo sa materyales ug mga kondisyon sa studio, ug magsabot og sesyon sumala sa anaa nga lugar ug kagamitan.</p>
+          <p>Tig-organisar: Mary Grace M. Peral<br>Kontak o panid: Idugang sa dili pa ipang-apod-apod<br>Adres sa studio ug iskedyul sa pag-abli: Kumpirmahon pa</p>
+          <p>Walay garantiya sa halin ug kita. Palihog kumpirmaha ang tanang gasto sa proyekto ug mga kondisyon sa studio sa dili pa magsugod.</p>
+        </section>
+      </main>
+    </div>
+    <!-- FOOTER -->
+    <footer>Tahi Circle · Magkat-on kita. Magtahi kita. Magbaligya kita. Maglambo kita.<br>Kinahanglang sabotan ang gisugyot nga mga kondisyon sa dili pa ang matag proyekto.</footer>
+    <script>
+    // BUTTON 1: Open the browser print dialog.
+    document.getElementById("print").addEventListener("click", () => {
+      window.print();
+    });
+
+    // BUTTON 2: Download the project fields as a JSON file.
+    // This does not submit information to a server.
+    document.getElementById("save").addEventListener("click", () => {
+      const values = {};
+
+      document.querySelectorAll("input, select").forEach((field) => {
+        values[field.name] = field.value;
+      });
+
+      const projectPlan = {
+        document: "Plano sa proyekto sa Tahi Circle",
+        fields: values
+      };
+
+      const blob = new Blob(
+        [JSON.stringify(projectPlan, null, 2)],
+        { type: "application/json" }
+      );
+
+      const downloadUrl = URL.createObjectURL(blob);
+      const downloadLink = document.createElement("a");
+
+      downloadLink.href = downloadUrl;
+      downloadLink.download = "Tahi_Circle_Project_Plan.json";
+      downloadLink.click();
+
+      setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
+
+      document.getElementById("status").textContent =
+        "Na-download na ang mga tubag sa proyekto. Mahimo usab nimong i-print kini nga panid aron adunay mabasang kopya.";
+    });
+  </script>
+  </body>
+</html>
