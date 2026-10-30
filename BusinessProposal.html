@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <!-- PAGE SETTINGS AND STYLES -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Tahi Circle customer proposal for fabric purchases, shared sewing and optional learning sessions.">
+    <title>Tahi Circle Customer Proposal</title>
+    <style>
+    /* GLOBAL STYLES */
+    * {
+      box-sizing:border-box;
+    }
+
+    html {
+      scroll-behavior:smooth;
+      scroll-padding-top:90px;
+    }
+
+    body {
+      margin:0;
+      background:#faf7f3;
+      color:#302e2b;
+      font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    /* HEADER AND BUTTONS */
+    header {
+      background:#fffdf9;
+      border-bottom:1px solid #e9ddd5;
+      padding:14px 5vw;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      position:sticky;
+      top:0;
+      z-index:2;
+    }
+
+    .brand {
+      font:700 25px Georgia,serif;
+      color:#74504f;
+    }
+
+    .eyebrow {
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:#705f58;
+    }
+
+    .tools {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    button,.button {
+      border:1px solid #b58b83;
+      background:#fff;
+      color:#593b37;
+      border-radius:7px;
+      padding:10px 15px;
+      font:600 13px system-ui;
+      cursor:pointer;
+      text-decoration:none;
+    }
+
+    button.primary {
+      background:#805b57;
+      color:white;
+    }
+
+    /* INTRODUCTION */
+    .hero {
+      max-width:1050px;
+      margin:auto;
+      padding:65px 25px 45px;
+    }
+
+    .hero h1 {
+      font:normal clamp(40px,7vw,70px)/1.1 Georgia,serif;
+      margin:15px 0;
+      color:#463934;
+    }
+
+    .hero p {
+      max-width:720px;
+      font-size:19px;
+      color:#6c5c55;
+    }
+
+    .badge {
+      display:inline-block;
+      background:#eee4df;
+      border-radius:30px;
+      padding:5px 13px;
+      font-size:12px;
+      font-weight:650;
+    }
+
+    /* PAGE LAYOUT AND NAVIGATION */
+    .layout {
+      max-width:1100px;
+      display:grid;
+      grid-template-columns:210px 1fr;
+      gap:35px;
+      margin:0 auto 60px;
+      padding:0 25px;
+    }
+
+    nav {
+      position:sticky;
+      top:95px;
+      align-self:start;
+    }
+
+    nav a {
+      display:block;
+      border-left:2px solid #ddd0c8;
+      padding:10px 14px;
+      color:#69534c;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    nav a:hover,nav a:focus {
+      background:#eee5df;
+      border-color:#9d746c;
+    }
+
+    section {
+      background:white;
+      border:1px solid #e6ded7;
+      border-radius:12px;
+      padding:32px;
+      margin-bottom:25px;
+      scroll-margin-top:90px;
+    }
+
+    h2 {
+      font:normal 31px/1.25 Georgia,serif;
+      margin:0 0 24px;
+      color:#493b35;
+    }
+
+    h3 {
+      font-size:19px;
+      margin:28px 0 10px;
+    }
+
+    p {
+      margin:0 0 15px;
+    }
+
+    .bullet {
+      padding-left:23px;
+      position:relative;
+    }
+
+    .bullet:before {
+      content:"•";
+      position:absolute;
+      left:4px;
+      color:#9c7268;
+    }
+
+    .step {
+      padding-left:15px;
+      border-left:3px solid #d8b9ae;
+    }
+
+    /* TABLES AND PROJECT FIELDS */
+    .table-wrap {
+      overflow-x:auto;
+      margin:18px 0 22px;
+    }
+
+    table {
+      border-collapse:collapse;
+      width:100%;
+      font-size:14px;
+      min-width:440px;
+    }
+
+    th,td {
+      border:1px solid #ded6cf;
+      text-align:left;
+      padding:12px;
+      vertical-align:top;
+    }
+
+    th {
+      background:#efe7e0;
+      font-weight:650;
+    }
+
+    tbody tr:nth-child(even) {
+      background:#fcfaf8;
+    }
+
+    .field {
+      display:block;
+      font-size:14px;
+      font-weight:600;
+      margin:15px 0;
+    }
+
+    input,select {
+      width:100%;
+      border:1px solid #c9bfb6;
+      border-radius:5px;
+      background:#fffdfb;
+      padding:10px;
+      font:16px system-ui;
+      color:#302e2b;
+      margin-top:6px;
+    }
+
+    input:focus,select:focus,button:focus-visible,a:focus-visible {
+      outline:3px solid #bd9988;
+      outline-offset:2px;
+    }
+
+    td input {
+      min-width:120px;
+      font-size:14px;
+      margin:0;
+    }
+
+    .note {
+      font-size:13px;
+      color:#705e56;
+    }
+
+    footer {
+      text-align:center;
+      padding:25px;
+      background:#eee5de;
+      color:#69554b;
+      font-size:13px;
+    }
+
+    .status {
+      min-height:1.7em;
+      color:#6b5349;
+      font-size:13px;
+    }
+
+    #planner-note {
+      padding-bottom:8px;
+    }
+
+    /* MOBILE LAYOUT */
+    @media(max-width:760px) {
+      header {
+        position:static;
+        padding:16px 20px;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero {
+        padding:35px 20px 25px;
+      }
+
+      .layout {
+        display:block;
+        padding:0 15px;
+      }
+
+      nav {
+        position:static;
+        display:flex;
+        overflow:auto;
+        margin-bottom:20px;
+      }
+
+      nav a {
+        white-space:nowrap;
+        border-left:0;
+        border-bottom:2px solid #ddd0c8;
+      }
+
+      section {
+        padding:23px 20px;
+      }
+
+      h2 {
+        font-size:27px;
+      }
+
+    }
+
+    /* PRINT LAYOUT */
+    @media print {
+      @page {
+        size:A4;
+        margin:15mm;
+      }
+
+      body {
+        background:white;
+        font-size:10.5pt;
+        line-height:1.45;
+      }
+
+      header,nav,.hero,.tools,.status,#planner-note,footer {
+        display:none!important;
+      }
+
+      .layout {
+        display:block;
+        padding:0;
+        margin:0;
+        max-width:none;
+      }
+
+      section {
+        border:0;
+        border-radius:0;
+        padding:0;
+        margin:0;
+        break-before:page;
+      }
+
+      section:first-child {
+        break-before:auto;
+      }
+
+      h2 {
+        font-size:22pt;
+      }
+
+      h3 {
+        font-size:13pt;
+        break-after:avoid;
+      }
+
+      p,tr,.field {
+        break-inside:avoid;
+      }
+
+      table {
+        min-width:0;
+        font-size:9pt;
+      }
+
+      th,td {
+        padding:7px;
+      }
+
+      input,select {
+        border:0;
+        border-bottom:1px solid #aaa;
+        border-radius:0;
+        padding:4px 0;
+        background:none;
+        font-size:10pt;
+      }
+
+      input::placeholder {
+        color:transparent;
+      }
+
+      a {
+        color:inherit;
+        text-decoration:none;
+      }
+
+    }
+  </style>
+  </head>
+  <body>
+    <!-- BRAND NAME AND ACTION BUTTONS -->
+    <header>
+      <div>
+        <div class="brand">Tahi Circle</div>
+        <div class="eyebrow">Sewing and learning community</div>
+      </div>
+      <div class="tools">
+        <button id="print" class="primary">Print or save as PDF</button>
+        <button id="save">Download project answers</button>
+      </div>
+    </header>
+    <div class="hero">
+      <span class="badge">Customer proposal · Terms to be agreed</span>
+      <h1>A space to sew<br>and grow together.</h1>
+      <p>Learn together. Sew together. Sell together. Grow together.</p>
+      <p class="note">For adults aged 18 and above. Explore the offer, review the proposed terms, and plan your first project.</p>
+    </div>
+    <div class="layout">
+      <!-- SECTION NAVIGATION -->
+      <nav aria-label="Proposal sections">
+        <a href="#section-1">The invitation</a>
+        <a href="#section-2">Purchases and fees</a>
+        <a href="#section-3">Plan a project</a>
+      </nav>
+      <!-- PROPOSAL CONTENT -->
+      <main>
+        <p id="planner-note" class="note">The planning fields are optional and stay on this page. Nothing is submitted or sent. Download your answers or print before closing; entries are not automatically saved.</p>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <!-- SECTION 1  THE INVITATION -->
+        <section id="section-1" aria-labelledby="title-1">
+          <h2 id="title-1">Tahi Circle Customer Proposal</h2>
+          <p>A shared space for fabric customers to learn and create</p>
+          <p>Learn together. Sew together. Sell together. Grow together.</p>
+          <h3>An invitation to create with us</h3>
+          <p>Tahi Circle invites adults aged 18 and above to purchase project fabrics, learn alongside fellow makers, and use shared sewing machines and tools during arranged studio sessions. You can make items for personal use or develop products to sell independently.</p>
+          <p>Our main business is selling fabrics. Our community brings customers together to exchange ideas, practice sewing, and support one another. Participation is optional, and income depends on your products, pricing, costs, and ability to find buyers.</p>
+          <h3>What you can access</h3>
+          <p class="bullet">Project fabrics and sewing supplies at prices disclosed before purchase or use.</p>
+          <p class="bullet">Peer learning and shared practice based on participants’ interests and available support.</p>
+          <p class="bullet">Sewing machines and selected tools during confirmed sessions, subject to availability and safe use.</p>
+          <p class="bullet">A supportive setting for planning, making, and discussing products such as pouches, bags, pillow covers, and other sewn items.</p>
+          <h3>How to get started</h3>
+          <p class="step">Tell us what you want to make and discuss the skills, materials, and equipment needed.</p>
+          <p class="step">Confirm the material quantities, prices, payment option, and any applicable studio support fee before cutting.</p>
+          <p class="step">Arrange a studio session, learn the equipment rules, and create your project.</p>
+          <p class="step">Keep your finished item or sell it yourself. Set your own price and manage your customers.</p>
+          <p class="step">For a qualifying sale, settle outstanding project materials and the agreed studio support fee under your project terms.</p>
+          <p>You do not need to promise regular attendance or submit a withdrawal letter. Stopping attendance does not cancel an existing purchase agreement.</p>
+        </section>
+        <!-- SECTION 2  PURCHASES AND STUDIO SUPPORT -->
+        <section id="section-2" aria-labelledby="title-2">
+          <h2 id="title-2">Purchases and Studio Support</h2>
+          <h3>Fabrics for studio projects</h3>
+          <p>Projects made using Tahi Circle’s facilities use fabrics purchased from Tahi Circle. This condition applies to studio projects; it does not restrict what you buy or make elsewhere. Ask about any additional supplies you need before starting.</p>
+          <p>Fabric used for practice, cutting trials, or unsuccessful sewing attempts remains part of your purchase. There is no additional damage penalty for fabric you have already bought. Replacement materials are a separate purchase. Any concern involving defective equipment or studio guidance should be reviewed before additional charges are agreed.</p>
+          <h3>Choose your material payment option</h3>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th scope="col">Option</th>
+                <th scope="col">What to agree before use</th>
+              </tr>
+              <tr>
+                <td>Pay upfront</td>
+                <td>Confirm the material price and pay before starting. This is suitable for practice and personal-use projects.</td>
+              </tr>
+              <tr>
+                <td>Pay after sale by prior agreement</td>
+                <td>Available only when expressly approved for a particular project. Record the material price and the sale-payment trigger. If the agreement says payment is due only after a sale, there is no deadline while the item remains unsold.</td>
+              </tr>
+              <tr>
+                <td>Another agreed schedule</td>
+                <td>Any installment or alternative schedule must be recorded before materials are used.</td>
+              </tr>
+            </table>
+          </div>
+          <p>For pay-after-sale projects, agree when payment must be remitted after customer funds are received, how deposits and refunds are handled, and what happens if the item is kept, gifted, damaged, or abandoned. Materials for practice that will not be sold need a separate payment arrangement.</p>
+          <h3>A contribution from qualifying sales</h3>
+          <p>Tahi Circle proposes a studio support fee on sales of products made using its facilities. This helps meet electricity bills, machine repairs, maintenance, and shared supply costs. The percentage is not yet fixed and must be disclosed and accepted before a project begins.</p>
+          <p>Proposed calculation: studio support fee = agreed percentage × actual product selling price after discounts, excluding separately charged delivery. Fabric charges are separate. A project record must state whether the fee replaces any session charge so that no unexpected additional fee is imposed.</p>
+          <p>For personal-use or practice projects, confirm any studio-access charge before booking. A sale-based fee alone does not explain access costs for items that will never be sold.</p>
+          <h3>Your creations and earnings</h3>
+          <p>You own and sell your creations, choose customers and prices, and handle delivery and customer concerns. Your remaining proceeds are the sale payment less material purchases, the agreed support fee, and your other expenses. These proceeds still need to compensate your time and labor. Inactivity does not automatically transfer your products to the studio or other participants.</p>
+        </section>
+        <!-- SECTION 3  FIRST PROJECT FORM -->
+        <section id="section-3" aria-labelledby="title-3">
+          <h2 id="title-3">Plan Your First Project</h2>
+          <p>Use this checklist to discuss your first project with Tahi Circle. This proposal is an invitation to participate, not a completed purchase or membership contract. Confirm the applicable terms in a separate project record before using materials or equipment.</p>
+          <h3>Project details</h3>
+          <label class="field">Participant name<input name="field-1" type="text" autocomplete="off">
+          </label>
+          <label class="field">Contact details<input name="field-2" type="text" autocomplete="off">
+          </label>
+          <label class="field">Project and intended quantity<input name="field-3" type="text" autocomplete="off">
+          </label>
+          <label class="field">Purpose<select name="purpose">
+              <option value="">Choose a purpose</option>
+              <option>Personal use</option>
+              <option>Practice</option>
+              <option>For sale</option>
+            </select>
+          </label>
+          <label class="field">Requested session date or schedule<input name="field-4" type="text" autocomplete="off">
+          </label>
+          <h3>Costs to confirm</h3>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Quantity or basis</th>
+                <th scope="col">Agreed amount</th>
+              </tr>
+              <tr>
+                <td>Fabric</td>
+                <td><input aria-label="Quantity or basis for Fabric" name="field-5" type="text"></td>
+                <td><input aria-label="Agreed amount for Fabric" name="field-6" type="text"></td>
+              </tr>
+              <tr>
+                <td>Other project materials</td>
+                <td><input aria-label="Quantity or basis for Other project materials" name="field-7" type="text"></td>
+                <td><input aria-label="Agreed amount for Other project materials" name="field-8" type="text"></td>
+              </tr>
+              <tr>
+                <td>Studio support fee on qualifying sales</td>
+                <td><input aria-label="Quantity or basis for Studio support fee on qualifying sales" name="field-9" type="text"></td>
+                <td><input aria-label="Agreed amount for Studio support fee on qualifying sales" name="field-10" type="text"></td>
+              </tr>
+              <tr>
+                <td>Session or access charge if applicable</td>
+                <td><input aria-label="Quantity or basis for Session or access charge if applicable" name="field-11" type="text"></td>
+                <td><input aria-label="Agreed amount for Session or access charge if applicable" name="field-12" type="text"></td>
+              </tr>
+            </table>
+          </div>
+          <h3>Payment terms to confirm</h3>
+          <label class="field">Material payment<select name="payment">
+              <option value="">Choose an agreed option</option>
+              <option>Upfront</option>
+              <option>Approved pay after sale</option>
+              <option>Other agreed schedule</option>
+            </select>
+          </label>
+          <label class="field">Payment trigger and remittance timing<input name="field-13" type="text" autocomplete="off">
+          </label>
+          <label class="field">Deposits refunds and canceled sales<input name="field-14" type="text" autocomplete="off">
+          </label>
+          <label class="field">Unsold items or change to personal use<input name="field-15" type="text" autocomplete="off">
+          </label>
+          <label class="field">Applicable studio fee and whether it replaces a session charge<input name="field-16" type="text" autocomplete="off">
+          </label>
+          <h3>A respectful shared studio</h3>
+          <p>Please book sessions in advance, follow the equipment orientation, keep tools in their designated places, and report faults promptly. Ask for help before using unfamiliar equipment. We encourage patient practice, respectful feedback, and realistic product planning.</p>
+          <h3>Join the circle</h3>
+          <p>Bring a product idea and a willingness to learn. We will discuss a manageable first project, explain the material prices and studio terms, and arrange a session that suits the available space and equipment.</p>
+          <p>Organizer: Mary Grace M. Peral<br>Contact or page: To be added before distribution<br>Studio address and opening schedule: To be confirmed</p>
+          <p>Sales and earnings are not guaranteed. Please confirm all project costs and applicable studio terms before starting.</p>
+        </section>
+      </main>
+    </div>
+    <!-- FOOTER -->
+    <footer>Tahi Circle · Learn together. Sew together. Sell together. Grow together.<br>Proposed terms are subject to agreement before each project.</footer>
+    <script>
+    // BUTTON 1: Open the browser print dialog.
+    document.getElementById("print").addEventListener("click", () => {
+      window.print();
+    });
+
+    // BUTTON 2: Download the project fields as a JSON file.
+    // This does not submit information to a server.
+    document.getElementById("save").addEventListener("click", () => {
+      const values = {};
+
+      document.querySelectorAll("input, select").forEach((field) => {
+        values[field.name] = field.value;
+      });
+
+      const projectPlan = {
+        document: "Tahi Circle project plan",
+        fields: values
+      };
+
+      const blob = new Blob(
+        [JSON.stringify(projectPlan, null, 2)],
+        { type: "application/json" }
+      );
+
+      const downloadUrl = URL.createObjectURL(blob);
+      const downloadLink = document.createElement("a");
+
+      downloadLink.href = downloadUrl;
+      downloadLink.download = "Tahi_Circle_Project_Plan.json";
+      downloadLink.click();
+
+      setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
+
+      document.getElementById("status").textContent =
+        "Project answers downloaded. You can also print this page to keep a readable copy.";
+    });
+  </script>
+  </body>
+</html>
