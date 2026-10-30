@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
-  <!-- PAGE SETTINGS AND STYLES -->
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Tahi Circle customer proposal for fabric purchases, shared sewing and optional learning sessions.">
-    <title>Tahi Circle Customer Proposal</title>
-    <style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover Tahi Circle, a fabric business and shared sewing community for learning and creating together.">
+  <title>Tahi Circle | Fabric Sewing and Learning</title>
+  <style>
     /* GLOBAL STYLES */
     * {
       box-sizing:border-box;
@@ -370,207 +369,126 @@
       }
 
     }
+  
+    /* MGA DAGDAG PARA SA PAHINANG PANG PROMOSYON */
+    .hero { padding-bottom: 32px; }
+    .intro { max-width: 760px; }
+    .cta { display: inline-block; margin-top: 12px; background: #805b57; color: white; }
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .feature h3 { margin-top: 0; }
+    .feature { border-top: 2px solid #d8b9ae; padding-top: 15px; }
+    .steps { padding-left: 23px; }
+    .steps li { padding-left: 5px; margin-bottom: 12px; }
+    .orientation { background: #f5efea; }
+    @media (max-width: 760px) { .features { grid-template-columns: 1fr; } }
+    @media print {
+      section { break-before: auto; margin-bottom: 20px; }
+      .features { display: block; }
+      .feature { margin-bottom: 15px; }
+      .cta { display: none; }
+    }
+
   </style>
-  </head>
-  <body>
-    <!-- BRAND NAME AND ACTION BUTTONS -->
-    <header>
-      <div>
-        <div class="brand">Tahi Circle</div>
-        <div class="eyebrow">Sewing and learning community</div>
-      </div>
-      <div class="tools">
-        <button id="print" class="primary">Print or save as PDF</button>
-        <button id="save">Download project answers</button>
-      </div>
-    </header>
-    <div class="hero">
-      <span class="badge">Customer proposal · Terms to be agreed</span>
-      <h1>A space to sew<br>and grow together.</h1>
-      <p>Learn together. Sew together. Sell together. Grow together.</p>
-      <p class="note">Explore the offer, review the proposed terms, and plan your first project.</p>
+</head>
+<body>
+  <!-- PANGALAN AT MGA BUTON -->
+  <header>
+    <div>
+      <div class="brand">Tahi Circle</div>
+      <div class="eyebrow">Sewing and learning community</div>
     </div>
-    <div class="layout">
-      <!-- SECTION NAVIGATION -->
-      <nav aria-label="Proposal sections">
-        <a href="#section-1">The invitation</a>
-        <a href="#section-2">Purchases and fees</a>
-        <a href="#section-3">Plan a project</a>
-      </nav>
-      <!-- PROPOSAL CONTENT -->
-      <main>
-        <p id="planner-note" class="note">The planning fields are optional and stay on this page. Nothing is submitted or sent. Download your answers or print before closing; entries are not automatically saved.</p>
-        <div id="status" class="status" role="status" aria-live="polite"></div>
-        <!-- SECTION 1  THE INVITATION -->
-        <section id="section-1" aria-labelledby="title-1">
-          <h2 id="title-1">Tahi Circle Customer Proposal</h2>
-          <p>A shared space for fabric customers to learn and create</p>
-          <p>Learn together. Sew together. Sell together. Grow together.</p>
-          <h3>An invitation to create with us</h3>
-          <p>Tahi Circle invites interested ones to purchase project fabrics, learn alongside fellow makers, and use shared sewing machines and tools during arranged studio sessions. You can make items for personal use or develop products to sell independently.</p>
-          <p>Our main business is selling fabrics. Our community brings customers together to exchange ideas, practice sewing, and support one another. Participation is optional, and income depends on your products, pricing, costs, and ability to find buyers.</p>
-          <h3>What you can access</h3>
-          <p class="bullet">Project fabrics and sewing supplies at prices disclosed before purchase or use.</p>
-          <p class="bullet">Peer learning and shared practice based on participants’ interests and available support.</p>
-          <p class="bullet">Sewing machines and selected tools during confirmed sessions, subject to availability and safe use.</p>
-          <p class="bullet">A supportive setting for planning, making, and discussing products such as pouches, bags, pillow covers, and other sewn items.</p>
-          <h3>How to get started</h3>
-          <p class="step">Tell us what you want to make and discuss the skills, materials, and equipment needed.</p>
-          <p class="step">Confirm the material quantities, prices, payment option, and any applicable studio support fee before cutting.</p>
-          <p class="step">Arrange a studio session, learn the equipment rules, and create your project.</p>
-          <p class="step">Keep your finished item or sell it yourself. Set your own price and manage your customers.</p>
-          <p class="step">For a qualifying sale, settle outstanding project materials and the agreed studio support fee under your project terms.</p>
-          <p>You do not need to promise regular attendance or submit a withdrawal letter. Stopping attendance does not cancel an existing purchase agreement.</p>
-        </section>
-        <!-- SECTION 2  PURCHASES AND STUDIO SUPPORT -->
-        <section id="section-2" aria-labelledby="title-2">
-          <h2 id="title-2">Purchases and Studio Support</h2>
-          <h3>Fabrics for studio projects</h3>
-          <p>Projects made using Tahi Circle’s facilities use fabrics purchased from Tahi Circle. This condition applies to studio projects; it does not restrict what you buy or make elsewhere. Ask about any additional supplies you need before starting.</p>
-          <p>Fabric used for practice, cutting trials, or unsuccessful sewing attempts remains part of your purchase. There is no additional damage penalty for fabric you have already bought. Replacement materials are a separate purchase. Any concern involving defective equipment or studio guidance should be reviewed before additional charges are agreed.</p>
-          <h3>Choose your material payment option</h3>
-          <div class="table-wrap">
-            <table>
-              <tr>
-                <th scope="col">Option</th>
-                <th scope="col">What to agree before use</th>
-              </tr>
-              <tr>
-                <td>Pay upfront</td>
-                <td>Confirm the material price and pay before starting. This is suitable for practice and personal-use projects.</td>
-              </tr>
-              <tr>
-                <td>Pay after sale by prior agreement</td>
-                <td>Available only when expressly approved for a particular project. Record the material price and the sale-payment trigger. If the agreement says payment is due only after a sale, there is no deadline while the item remains unsold.</td>
-              </tr>
-              <tr>
-                <td>Another agreed schedule</td>
-                <td>Any installment or alternative schedule must be recorded before materials are used.</td>
-              </tr>
-            </table>
-          </div>
-          <p>For pay-after-sale projects, agree when payment must be remitted after customer funds are received, how deposits and refunds are handled, and what happens if the item is kept, gifted, damaged, or abandoned. Materials for practice that will not be sold need a separate payment arrangement.</p>
-          <h3>A contribution from qualifying sales</h3>
-          <p>Tahi Circle proposes a studio support fee on sales of products made using its facilities. This helps meet electricity bills, machine repairs, maintenance, and shared supply costs. The percentage is not yet fixed and must be disclosed and accepted before a project begins.</p>
-          <p>Proposed calculation: studio support fee = agreed percentage × actual product selling price after discounts, excluding separately charged delivery. Fabric charges are separate. A project record must state whether the fee replaces any session charge so that no unexpected additional fee is imposed.</p>
-          <p>For personal-use or practice projects, confirm any studio-access charge before booking. A sale-based fee alone does not explain access costs for items that will never be sold.</p>
-          <h3>Your creations and earnings</h3>
-          <p>You own and sell your creations, choose customers and prices, and handle delivery and customer concerns. Your remaining proceeds are the sale payment less material purchases, the agreed support fee, and your other expenses. These proceeds still need to compensate your time and labor. Inactivity does not automatically transfer your products to the studio or other participants.</p>
-        </section>
-        <!-- SECTION 3  FIRST PROJECT FORM -->
-        <section id="section-3" aria-labelledby="title-3">
-          <h2 id="title-3">Plan Your First Project</h2>
-          <p>Use this checklist to discuss your first project with Tahi Circle. This proposal is an invitation to participate, not a completed purchase or membership contract. Confirm the applicable terms in a separate project record before using materials or equipment.</p>
-          <h3>Project details</h3>
-          <label class="field">Participant name<input name="field-1" type="text" autocomplete="off">
-          </label>
-          <label class="field">Contact details<input name="field-2" type="text" autocomplete="off">
-          </label>
-          <label class="field">Project and intended quantity<input name="field-3" type="text" autocomplete="off">
-          </label>
-          <label class="field">Purpose<select name="purpose">
-              <option value="">Choose a purpose</option>
-              <option>Personal use</option>
-              <option>Practice</option>
-              <option>For sale</option>
-            </select>
-          </label>
-          <label class="field">Requested session date or schedule<input name="field-4" type="text" autocomplete="off">
-          </label>
-          <h3>Costs to confirm</h3>
-          <div class="table-wrap">
-            <table>
-              <tr>
-                <th scope="col">Item</th>
-                <th scope="col">Quantity or basis</th>
-                <th scope="col">Agreed amount</th>
-              </tr>
-              <tr>
-                <td>Fabric</td>
-                <td><input aria-label="Quantity or basis for Fabric" name="field-5" type="text"></td>
-                <td><input aria-label="Agreed amount for Fabric" name="field-6" type="text"></td>
-              </tr>
-              <tr>
-                <td>Other project materials</td>
-                <td><input aria-label="Quantity or basis for Other project materials" name="field-7" type="text"></td>
-                <td><input aria-label="Agreed amount for Other project materials" name="field-8" type="text"></td>
-              </tr>
-              <tr>
-                <td>Studio support fee on qualifying sales</td>
-                <td><input aria-label="Quantity or basis for Studio support fee on qualifying sales" name="field-9" type="text"></td>
-                <td><input aria-label="Agreed amount for Studio support fee on qualifying sales" name="field-10" type="text"></td>
-              </tr>
-              <tr>
-                <td>Session or access charge if applicable</td>
-                <td><input aria-label="Quantity or basis for Session or access charge if applicable" name="field-11" type="text"></td>
-                <td><input aria-label="Agreed amount for Session or access charge if applicable" name="field-12" type="text"></td>
-              </tr>
-            </table>
-          </div>
-          <h3>Payment terms to confirm</h3>
-          <label class="field">Material payment<select name="payment">
-              <option value="">Choose an agreed option</option>
-              <option>Upfront</option>
-              <option>Approved pay after sale</option>
-              <option>Other agreed schedule</option>
-            </select>
-          </label>
-          <label class="field">Payment trigger and remittance timing<input name="field-13" type="text" autocomplete="off">
-          </label>
-          <label class="field">Deposits refunds and canceled sales<input name="field-14" type="text" autocomplete="off">
-          </label>
-          <label class="field">Unsold items or change to personal use<input name="field-15" type="text" autocomplete="off">
-          </label>
-          <label class="field">Applicable studio fee and whether it replaces a session charge<input name="field-16" type="text" autocomplete="off">
-          </label>
-          <h3>A respectful shared studio</h3>
-          <p>Please book sessions in advance, follow the equipment orientation, keep tools in their designated places, and report faults promptly. Ask for help before using unfamiliar equipment. We encourage patient practice, respectful feedback, and realistic product planning.</p>
-          <h3>Join the circle</h3>
-          <p>Bring a product idea and a willingness to learn. We will discuss a manageable first project, explain the material prices and studio terms, and arrange a session that suits the available space and equipment.</p>
-          <p>Organizer: Mary Grace M. Peral<br>Contact or page: To be added before distribution<br>Studio address and opening schedule: To be confirmed</p>
-          <p>Sales and earnings are not guaranteed. Please confirm all project costs and applicable studio terms before starting.</p>
-        </section>
-      </main>
+    <div class="tools">
+      <a class="button" href="#oryentasyon">Explore orientation</a>
+      <button id="print" class="primary" type="button">Print or save as PDF</button>
     </div>
-    <!-- FOOTER -->
-    <footer>Tahi Circle · Learn together. Sew together. Sell together. Grow together.<br>Proposed terms are subject to agreement before each project.</footer>
-    <script>
-    // BUTTON 1: Open the browser print dialog.
+  </header>
+
+  <!-- PAMBUNGAD NA MENSAHE -->
+  <div class="hero">
+    <span class="badge">Fabric · Learning · Creativity · Community</span>
+    <h1>Have an idea?<br>Let’s stitch a beginning.</h1>
+    <p>Learn together. Sew together.<br>Sell together. Grow together.</p>
+    <p class="intro">A space for people who love fabric and sewing—and those who want to give it a try. At Tahi Circle, there is room for your ideas, practice, and handmade creations.</p>
+    <a class="button cta" href="#tungkol">Discover Tahi Circle</a>
+  </div>
+
+  <div class="layout">
+    <!-- MGA LINK SA BAWAT BAHAGI -->
+    <nav aria-label="Page sections">
+      <a href="#tungkol">About the studio</a>
+      <a href="#alok">What you can explore</a>
+      <a href="#simula">Getting started</a>
+      <a href="#oryentasyon">Orientation</a>
+    </nav>
+
+    <main>
+      <!-- TUNGKOL SA TAHI CIRCLE -->
+      <section id="tungkol" aria-labelledby="tungkol-title">
+        <h2 id="tungkol-title">Every creation begins with fabric</h2>
+        <p>Tahi Circle is a fabric business with a shared sewing space and a community that learns together. Here, you can choose fabrics for your project, exchange ideas, and practice alongside fellow sewing enthusiasts.</p>
+        <p>Sewing machines and tools may be used during arranged sessions, subject to availability, guidance, and studio rules. Projects made using our facilities use fabrics purchased from Tahi Circle.</p>
+        <p>You do not need to be an expert. Start with a project that interests you and build your skills gradually. Participation is optional; suitable ways to take part are discussed during orientation.</p>
+      </section>
+
+      <!-- MGA GAWAIN AT PRODUKTO -->
+      <section id="alok" aria-labelledby="alok-title">
+        <h2 id="alok-title">What you can explore</h2>
+        <div class="features">
+          <div class="feature">
+            <h3>Choose your fabric</h3>
+            <p>Explore colors and prints that suit your idea. Discuss suitable fabrics and materials before starting your project.</p>
+          </div>
+          <div class="feature">
+            <h3>Learn with others</h3>
+            <p>Observe, ask questions, share what you know, and practice according to your interests and the guidance available.</p>
+          </div>
+          <div class="feature">
+            <h3>Create something of your own</h3>
+            <p>Explore pillow covers, pouches, bags, table linens, patchwork, and other sewn items. Choose a project that suits your skills.</p>
+          </div>
+          <div class="feature">
+            <h3>Explore opportunities to earn</h3>
+            <p>For those interested in selling, handmade creations can become products. You manage your own sales and communicate with your customers.</p>
+          </div>
+        </div>
+        <p>Create for personal use, gifts, or selling. Sales and income are not guaranteed, but there is an opportunity to learn and improve your craft.</p>
+      </section>
+
+      <!-- SIMPLENG PARAAN NG PAGSISIMULA -->
+      <section id="simula" aria-labelledby="simula-title">
+        <h2 id="simula-title">Start with an idea</h2>
+        <ol class="steps">
+          <li><strong>Share what you want to make.</strong> Tell us what you would like to learn or create.</li>
+          <li><strong>Attend orientation.</strong> Get to know the studio, equipment, and ways to participate.</li>
+          <li><strong>Discuss your project.</strong> Choose your fabric and clarify the materials, schedule, and applicable arrangements.</li>
+          <li><strong>Learn and create.</strong> Begin your agreed activity alongside the community.</li>
+        </ol>
+      </section>
+
+      <!-- MGA DETALYE AY IPAPALIWANAG SA ORYENTASYON -->
+      <section id="oryentasyon" class="orientation" aria-labelledby="oryentasyon-title">
+        <h2 id="oryentasyon-title">Get to know our circle</h2>
+        <p>Orientation covers participation, machine and tool use, safety guidance, schedules, material prices and payment arrangements, and any applicable fees or agreements.</p>
+        <p>You will have an opportunity to ask questions and clarify the details before deciding, purchasing, or using the facilities. This page introduces the studio; arrangements for individual projects are discussed separately.</p>
+        <h3>Interested in joining us?</h3>
+        <p>Share your idea with Tahi Circle and ask about the next orientation.</p>
+        <p class="note"><strong>Organizer:</strong> Mary Grace M. Peral<br>
+          <strong>Contact or page:</strong> To be added before distribution<br>
+          <strong>Location and schedule:</strong> To be announced once confirmed</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <strong>Tahi Circle</strong><br>
+    Learn together. Sew together. Sell together. Grow together.
+  </footer>
+
+  <!-- PRINT BUTTON -->
+  <script>
     document.getElementById("print").addEventListener("click", () => {
       window.print();
     });
-
-    // BUTTON 2: Download the project fields as a JSON file.
-    // This does not submit information to a server.
-    document.getElementById("save").addEventListener("click", () => {
-      const values = {};
-
-      document.querySelectorAll("input, select").forEach((field) => {
-        values[field.name] = field.value;
-      });
-
-      const projectPlan = {
-        document: "Tahi Circle project plan",
-        fields: values
-      };
-
-      const blob = new Blob(
-        [JSON.stringify(projectPlan, null, 2)],
-        { type: "application/json" }
-      );
-
-      const downloadUrl = URL.createObjectURL(blob);
-      const downloadLink = document.createElement("a");
-
-      downloadLink.href = downloadUrl;
-      downloadLink.download = "Tahi_Circle_Project_Plan.json";
-      downloadLink.click();
-
-      setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
-
-      document.getElementById("status").textContent =
-        "Project answers downloaded. You can also print this page to keep a readable copy.";
-    });
   </script>
-  </body>
+</body>
 </html>
