@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="fil">
+  <!-- PAGE SETTINGS AND STYLES -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Panukala ng Tahi Circle para sa pagbili ng tela, sama-samang pananahi, at boluntaryong pagkatuto.">
+    <title>Panukala ng Tahi Circle para sa mga Kustomer</title>
+    <style>
+    /* GLOBAL STYLES */
+    * {
+      box-sizing:border-box;
+    }
+
+    html {
+      scroll-behavior:smooth;
+      scroll-padding-top:90px;
+    }
+
+    body {
+      margin:0;
+      background:#faf7f3;
+      color:#302e2b;
+      font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    /* HEADER AND BUTTONS */
+    header {
+      background:#fffdf9;
+      border-bottom:1px solid #e9ddd5;
+      padding:14px 5vw;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      position:sticky;
+      top:0;
+      z-index:2;
+    }
+
+    .brand {
+      font:700 25px Georgia,serif;
+      color:#74504f;
+    }
+
+    .eyebrow {
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:#705f58;
+    }
+
+    .tools {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    button,.button {
+      border:1px solid #b58b83;
+      background:#fff;
+      color:#593b37;
+      border-radius:7px;
+      padding:10px 15px;
+      font:600 13px system-ui;
+      cursor:pointer;
+      text-decoration:none;
+    }
+
+    button.primary {
+      background:#805b57;
+      color:white;
+    }
+
+    /* INTRODUCTION */
+    .hero {
+      max-width:1050px;
+      margin:auto;
+      padding:65px 25px 45px;
+    }
+
+    .hero h1 {
+      font:normal clamp(40px,7vw,70px)/1.1 Georgia,serif;
+      margin:15px 0;
+      color:#463934;
+    }
+
+    .hero p {
+      max-width:720px;
+      font-size:19px;
+      color:#6c5c55;
+    }
+
+    .badge {
+      display:inline-block;
+      background:#eee4df;
+      border-radius:30px;
+      padding:5px 13px;
+      font-size:12px;
+      font-weight:650;
+    }
+
+    /* PAGE LAYOUT AND NAVIGATION */
+    .layout {
+      max-width:1100px;
+      display:grid;
+      grid-template-columns:210px 1fr;
+      gap:35px;
+      margin:0 auto 60px;
+      padding:0 25px;
+    }
+
+    nav {
+      position:sticky;
+      top:95px;
+      align-self:start;
+    }
+
+    nav a {
+      display:block;
+      border-left:2px solid #ddd0c8;
+      padding:10px 14px;
+      color:#69534c;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    nav a:hover,nav a:focus {
+      background:#eee5df;
+      border-color:#9d746c;
+    }
+
+    section {
+      background:white;
+      border:1px solid #e6ded7;
+      border-radius:12px;
+      padding:32px;
+      margin-bottom:25px;
+      scroll-margin-top:90px;
+    }
+
+    h2 {
+      font:normal 31px/1.25 Georgia,serif;
+      margin:0 0 24px;
+      color:#493b35;
+    }
+
+    h3 {
+      font-size:19px;
+      margin:28px 0 10px;
+    }
+
+    p {
+      margin:0 0 15px;
+    }
+
+    .bullet {
+      padding-left:23px;
+      position:relative;
+    }
+
+    .bullet:before {
+      content:"•";
+      position:absolute;
+      left:4px;
+      color:#9c7268;
+    }
+
+    .step {
+      padding-left:15px;
+      border-left:3px solid #d8b9ae;
+    }
+
+    /* TABLES AND PROJECT FIELDS */
+    .table-wrap {
+      overflow-x:auto;
+      margin:18px 0 22px;
+    }
+
+    table {
+      border-collapse:collapse;
+      width:100%;
+      font-size:14px;
+      min-width:440px;
+    }
+
+    th,td {
+      border:1px solid #ded6cf;
+      text-align:left;
+      padding:12px;
+      vertical-align:top;
+    }
+
+    th {
+      background:#efe7e0;
+      font-weight:650;
+    }
+
+    tbody tr:nth-child(even) {
+      background:#fcfaf8;
+    }
+
+    .field {
+      display:block;
+      font-size:14px;
+      font-weight:600;
+      margin:15px 0;
+    }
+
+    input,select {
+      width:100%;
+      border:1px solid #c9bfb6;
+      border-radius:5px;
+      background:#fffdfb;
+      padding:10px;
+      font:16px system-ui;
+      color:#302e2b;
+      margin-top:6px;
+    }
+
+    input:focus,select:focus,button:focus-visible,a:focus-visible {
+      outline:3px solid #bd9988;
+      outline-offset:2px;
+    }
+
+    td input {
+      min-width:120px;
+      font-size:14px;
+      margin:0;
+    }
+
+    .note {
+      font-size:13px;
+      color:#705e56;
+    }
+
+    footer {
+      text-align:center;
+      padding:25px;
+      background:#eee5de;
+      color:#69554b;
+      font-size:13px;
+    }
+
+    .status {
+      min-height:1.7em;
+      color:#6b5349;
+      font-size:13px;
+    }
+
+    #planner-note {
+      padding-bottom:8px;
+    }
+
+    /* MOBILE LAYOUT */
+    @media(max-width:760px) {
+      header {
+        position:static;
+        padding:16px 20px;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero {
+        padding:35px 20px 25px;
+      }
+
+      .layout {
+        display:block;
+        padding:0 15px;
+      }
+
+      nav {
+        position:static;
+        display:flex;
+        overflow:auto;
+        margin-bottom:20px;
+      }
+
+      nav a {
+        white-space:nowrap;
+        border-left:0;
+        border-bottom:2px solid #ddd0c8;
+      }
+
+      section {
+        padding:23px 20px;
+      }
+
+      h2 {
+        font-size:27px;
+      }
+
+    }
+
+    /* PRINT LAYOUT */
+    @media print {
+      @page {
+        size:A4;
+        margin:15mm;
+      }
+
+      body {
+        background:white;
+        font-size:10.5pt;
+        line-height:1.45;
+      }
+
+      header,nav,.hero,.tools,.status,#planner-note,footer {
+        display:none!important;
+      }
+
+      .layout {
+        display:block;
+        padding:0;
+        margin:0;
+        max-width:none;
+      }
+
+      section {
+        border:0;
+        border-radius:0;
+        padding:0;
+        margin:0;
+        break-before:page;
+      }
+
+      section:first-child {
+        break-before:auto;
+      }
+
+      h2 {
+        font-size:22pt;
+      }
+
+      h3 {
+        font-size:13pt;
+        break-after:avoid;
+      }
+
+      p,tr,.field {
+        break-inside:avoid;
+      }
+
+      table {
+        min-width:0;
+        font-size:9pt;
+      }
+
+      th,td {
+        padding:7px;
+      }
+
+      input,select {
+        border:0;
+        border-bottom:1px solid #aaa;
+        border-radius:0;
+        padding:4px 0;
+        background:none;
+        font-size:10pt;
+      }
+
+      input::placeholder {
+        color:transparent;
+      }
+
+      a {
+        color:inherit;
+        text-decoration:none;
+      }
+
+    }
+  </style>
+  </head>
+  <body>
+    <!-- BRAND NAME AND ACTION BUTTONS -->
+    <header>
+      <div>
+        <div class="brand">Tahi Circle</div>
+        <div class="eyebrow">Komunidad ng pananahi at pagkatuto</div>
+      </div>
+      <div class="tools">
+        <button id="print" class="primary">I-print o i-save bilang PDF</button>
+        <button id="save">I-download ang mga sagot sa proyekto</button>
+      </div>
+    </header>
+    <div class="hero">
+      <span class="badge">Panukala para sa kustomer · Mga kondisyong pagkakasunduan</span>
+      <h1>Isang lugar para manahi<br>at sama-samang umunlad.</h1>
+      <p>Sama-samang matuto. Sama-samang manahi. Sama-samang magbenta. Sama-samang umunlad.</p>
+      <p class="note">Alamin ang aming alok, suriin ang mga iminungkahing kondisyon, at planuhin ang iyong unang proyekto.</p>
+    </div>
+    <div class="layout">
+      <!-- SECTION NAVIGATION -->
+      <nav aria-label="Mga bahagi ng panukala">
+        <a href="#section-1">Ang paanyaya</a>
+        <a href="#section-2">Mga bibilhin at bayarin</a>
+        <a href="#section-3">Magplano ng proyekto</a>
+      </nav>
+      <!-- PROPOSAL CONTENT -->
+      <main>
+        <p id="planner-note" class="note">Opsyonal ang pagsagot sa mga field ng pagpaplano. Mananatili lamang sa pahinang ito ang iyong mga sagot; walang isusumite o ipapadala. I-download o i-print ang mga sagot bago isara ang pahina dahil hindi awtomatikong nase-save ang mga ito.</p>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <!-- SECTION 1  THE INVITATION -->
+        <section id="section-1" aria-labelledby="title-1">
+          <h2 id="title-1">Panukala ng Tahi Circle para sa mga Kustomer</h2>
+          <p>Isang lugar kung saan maaaring matuto at lumikha ang mga kustomer ng tela</p>
+          <p>Sama-samang matuto. Sama-samang manahi. Sama-samang magbenta. Sama-samang umunlad.</p>
+          <h3>Paanyayang lumikha kasama namin</h3>
+          <p>Inaanyayahan ng Tahi Circle ang mga interesado na bumili ng tela para sa kanilang proyekto, matuto kasama ang kapwa mananahi, at gumamit ng mga pinagsasaluhang makina at kagamitan sa nakatakdang mga sesyon sa studio. Maaari kang gumawa para sa sariling gamit o lumikha ng mga produktong ikaw mismo ang magbebenta.</p>
+          <p>Pangunahing negosyo namin ang pagbebenta ng tela. Pinagsasama ng aming komunidad ang mga kustomer upang magpalitan ng ideya, magsanay sa pananahi, at magtulungan. Boluntaryo ang paglahok. Nakadepende ang kita sa iyong produkto, presyo, gastos, at kakayahang makahanap ng mamimili.</p>
+          <h3>Mga maaari mong magamit at salihan</h3>
+          <p class="bullet">Mga tela at kagamitan sa pananahi na may presyong ipinapaalam bago bilhin o gamitin.</p>
+          <p class="bullet">Sama-samang pagkatuto at pagsasanay batay sa interes ng mga kalahok at tulong na maaaring maibigay.</p>
+          <p class="bullet">Mga makinang panahi at piling kagamitan sa kumpirmadong mga sesyon, ayon sa availability at ligtas na paggamit ng mga ito.</p>
+          <p class="bullet">Isang kapaligirang nagtutulungan sa pagpaplano, paggawa, at pagtalakay sa mga produkto gaya ng maliliit na lalagyan, bag, punda ng unan, at iba pang tinahing gamit.</p>
+          <h3>Paano magsimula</h3>
+          <p class="step">Sabihin sa amin kung ano ang nais mong gawin at pag-usapan ang kinakailangang kasanayan, materyales, at kagamitan.</p>
+          <p class="step">Kumpirmahin ang dami at presyo ng materyales, paraan ng pagbabayad, at anumang bayad para sa suporta sa studio bago maggupit.</p>
+          <p class="step">Magtakda ng sesyon sa studio, alamin ang mga tuntunin sa paggamit ng kagamitan, at gawin ang iyong proyekto.</p>
+          <p class="step">Gamitin ang iyong natapos na produkto o ibenta ito mismo. Ikaw ang magtakda ng presyo at makipag-ugnayan sa iyong mga kustomer.</p>
+          <p class="step">Para sa bentahang saklaw ng kasunduan, bayaran ang natitirang halaga ng materyales at napagkasunduang bayad para sa suporta sa studio ayon sa mga kondisyon ng iyong proyekto.</p>
+          <p>Hindi kailangang mangakong regular na dadalo o magsumite ng liham ng pagkalas. Hindi nakakansela ang umiiral na kasunduan sa pagbili kapag huminto ka sa pagdalo.</p>
+        </section>
+        <!-- SECTION 2  PURCHASES AND STUDIO SUPPORT -->
+        <section id="section-2" aria-labelledby="title-2">
+          <h2 id="title-2">Mga Bibilhin at Suporta sa Studio</h2>
+          <h3>Tela para sa mga proyekto sa studio</h3>
+          <p>Ang mga proyektong gagawin gamit ang pasilidad ng Tahi Circle ay gagamit ng telang binili mula sa Tahi Circle. Para lamang sa mga proyekto sa studio ang kondisyong ito; malaya kang bumili at gumawa sa ibang lugar. Magtanong tungkol sa iba pang kailangang materyales bago magsimula.</p>
+          <p>Bahagi pa rin ng iyong binili ang telang ginamit sa pagsasanay, pagsubok sa paggupit, o hindi matagumpay na pananahi. Walang karagdagang multa sa pagkasira ng telang nabili mo na. Hiwalay na pagbili ang mga pamalit na materyales. Susuriin muna ang anumang problemang may kaugnayan sa depektibong kagamitan o gabay mula sa studio bago magkasundo sa karagdagang singil.</p>
+          <h3>Piliin ang paraan ng pagbabayad sa materyales</h3>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th scope="col">Pagpipilian</th>
+                <th scope="col">Mga dapat pagkasunduan bago gamitin</th>
+              </tr>
+              <tr>
+                <td>Magbayad muna</td>
+                <td>Kumpirmahin ang presyo ng materyales at magbayad bago magsimula. Angkop ito para sa pagsasanay at mga proyektong pansariling gamit.</td>
+              </tr>
+              <tr>
+                <td>Magbayad matapos maibenta ayon sa naunang kasunduan</td>
+                <td>Maaari lamang ito kapag malinaw na inaprubahan para sa isang partikular na proyekto. Itala ang presyo ng materyales at kung anong pangyayari sa pagbebenta ang magiging batayan ng paniningil. Kung napagkasunduang magbabayad lamang matapos maibenta, walang takdang petsa ng pagbabayad habang hindi pa naibebenta ang produkto.</td>
+              </tr>
+              <tr>
+                <td>Ibang napagkasunduang iskedyul</td>
+                <td>Dapat itala ang anumang hulugan o ibang iskedyul ng pagbabayad bago gamitin ang materyales.</td>
+              </tr>
+            </table>
+          </div>
+          <p>Para sa mga proyektong babayaran matapos maibenta, pagkasunduan kung kailan ibibigay ang bayad matapos matanggap ang pera ng mamimili, paano hahawakan ang paunang bayad at pagsasauli ng pera, at ano ang gagawin kung ang produkto ay itatago, ipamimigay, masisira, o iiwan. Kailangan ng hiwalay na kasunduan sa pagbabayad para sa materyales na gagamitin sa pagsasanay at hindi ibebenta.</p>
+          <h3>Bayad mula sa mga bentahang saklaw ng kasunduan</h3>
+          <p>Iminumungkahi ng Tahi Circle ang bayad para sa suporta sa studio mula sa benta ng mga produktong ginawa gamit ang pasilidad nito. Makakatulong ito sa kuryente, pagkukumpuni at pagpapanatili ng makina, at mga pinagsasaluhang suplay. Hindi pa itinatalaga ang porsiyento; dapat itong ipaalam at pagkasunduan bago magsimula ang proyekto.</p>
+          <p>Iminungkahing pagkalkula: bayad para sa suporta sa studio = napagkasunduang porsiyento × aktuwal na presyo ng produkto matapos ang diskuwento, hindi kasama ang hiwalay na singil sa paghahatid. Hiwalay ang bayad sa tela. Dapat nakasaad sa rekord ng proyekto kung papalit ang bayad na ito sa singil sa sesyon upang walang hindi inaasahang dagdag na bayarin.</p>
+          <p>Para sa pagsasanay o pansariling gamit, kumpirmahin ang anumang bayad sa paggamit ng studio bago magpa-iskedyul. Hindi sapat na batayan ang bayad mula sa benta para sa gastos sa paggamit ng studio para sa mga bagay na hindi naman ibebenta.</p>
+          <h3>Iyong mga likha at kinita</h3>
+          <p>Ikaw ang may-ari at magbebenta ng iyong mga likha. Ikaw ang pipili ng kustomer at presyo at hahawak sa paghahatid at mga usapin ng mamimili. Ang matitirang halaga sa iyo ay ang natanggap na bayad matapos ibawas ang materyales, napagkasunduang bayad sa suporta, at iba mong gastos. Mula rin dito magmumula ang kabayaran sa iyong oras at paggawa. Hindi awtomatikong nalilipat sa studio o ibang kalahok ang pagmamay-ari ng iyong mga produkto dahil lamang sa hindi paglahok.</p>
+        </section>
+        <!-- SECTION 3  FIRST PROJECT FORM -->
+        <section id="section-3" aria-labelledby="title-3">
+          <h2 id="title-3">Planuhin ang Iyong Unang Proyekto</h2>
+          <p>Gamitin ang talaang ito sa pagtalakay ng iyong unang proyekto sa Tahi Circle. Ang panukalang ito ay paanyayang lumahok, hindi isang pinal na kontrata sa pagbili o pagiging miyembro. Kumpirmahin ang mga kondisyon sa hiwalay na rekord ng proyekto bago gumamit ng materyales o kagamitan.</p>
+          <h3>Mga detalye ng proyekto</h3>
+          <label class="field">Pangalan ng kalahok<input name="field-1" type="text" autocomplete="off">
+          </label>
+          <label class="field">Numero o paraan ng pakikipag-ugnayan<input name="field-2" type="text" autocomplete="off">
+          </label>
+          <label class="field">Proyekto at dami ng gagawin<input name="field-3" type="text" autocomplete="off">
+          </label>
+          <label class="field">Layunin<select name="purpose">
+              <option value="">Pumili ng layunin</option>
+              <option>Pansariling gamit</option>
+              <option>Pagsasanay</option>
+              <option>Para ibenta</option>
+            </select>
+          </label>
+          <label class="field">Hinihiling na petsa o iskedyul ng sesyon<input name="field-4" type="text" autocomplete="off">
+          </label>
+          <h3>Mga gastusing dapat kumpirmahin</h3>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th scope="col">Bagay</th>
+                <th scope="col">Dami o batayan</th>
+                <th scope="col">Napagkasunduang halaga</th>
+              </tr>
+              <tr>
+                <td>Tela</td>
+                <td><input aria-label="Dami o batayan para sa Tela" name="field-5" type="text"></td>
+                <td><input aria-label="Napagkasunduang halaga para sa Tela" name="field-6" type="text"></td>
+              </tr>
+              <tr>
+                <td>Iba pang materyales ng proyekto</td>
+                <td><input aria-label="Dami o batayan para sa Iba pang materyales ng proyekto" name="field-7" type="text"></td>
+                <td><input aria-label="Napagkasunduang halaga para sa Iba pang materyales ng proyekto" name="field-8" type="text"></td>
+              </tr>
+              <tr>
+                <td>Bayad para sa suporta sa studio mula sa mga bentahang saklaw ng kasunduan</td>
+                <td><input aria-label="Dami o batayan para sa Bayad para sa suporta sa studio mula sa mga bentahang saklaw ng kasunduan" name="field-9" type="text"></td>
+                <td><input aria-label="Napagkasunduang halaga para sa Bayad para sa suporta sa studio mula sa mga bentahang saklaw ng kasunduan" name="field-10" type="text"></td>
+              </tr>
+              <tr>
+                <td>Bayad sa sesyon o paggamit kung mayroon</td>
+                <td><input aria-label="Dami o batayan para sa Bayad sa sesyon o paggamit kung mayroon" name="field-11" type="text"></td>
+                <td><input aria-label="Napagkasunduang halaga para sa Bayad sa sesyon o paggamit kung mayroon" name="field-12" type="text"></td>
+              </tr>
+            </table>
+          </div>
+          <h3>Mga kondisyon sa pagbabayad na dapat kumpirmahin</h3>
+          <label class="field">Pagbabayad sa materyales<select name="payment">
+              <option value="">Piliin ang napagkasunduang paraan</option>
+              <option>Bayad muna</option>
+              <option>Inaprubahang bayad matapos maibenta</option>
+              <option>Ibang napagkasunduang iskedyul</option>
+            </select>
+          </label>
+          <label class="field">Batayan ng paniningil at panahon ng pagbibigay ng bayad<input name="field-13" type="text" autocomplete="off">
+          </label>
+          <label class="field">Paunang bayad pagsasauli ng pera at kinanselang mga bentahan<input name="field-14" type="text" autocomplete="off">
+          </label>
+          <label class="field">Mga hindi naibenta o gagawing pansariling gamit<input name="field-15" type="text" autocomplete="off">
+          </label>
+          <label class="field">Bayad sa studio at kung papalit ito sa singil sa sesyon<input name="field-16" type="text" autocomplete="off">
+          </label>
+          <h3>Studio na may paggalang at pagtutulungan</h3>
+          <p>Mangyaring magpa-iskedyul nang maaga, sundin ang gabay sa paggamit ng kagamitan, ibalik ang mga gamit sa tamang lalagyan, at ipagbigay-alam agad ang mga sira. Humingi ng tulong bago gumamit ng kagamitang hindi mo pa kabisado. Hinihikayat namin ang matiyagang pagsasanay, magalang na pagbibigay ng puna, at pagpaplano ng produktong kayang gawin.</p>
+          <h3>Sumali sa Tahi Circle</h3>
+          <p>Magdala ng ideya para sa produkto at kahandaang matuto. Pag-uusapan natin ang unang proyektong kaya mong gawin, ipapaliwanag ang presyo ng materyales at mga kondisyon sa studio, at magtatakda ng sesyon ayon sa magagamit na lugar at kagamitan.</p>
+          <p>Tagapag-organisa: Mary Grace M. Peral<br>Kontak o pahina: Ilalagay bago ipamahagi<br>Adres ng studio at iskedyul ng pagbubukas: Kukumpirmahin pa</p>
+          <p>Hindi garantisado ang benta at kita. Mangyaring kumpirmahin ang lahat ng gastos sa proyekto at mga kondisyon sa studio bago magsimula.</p>
+        </section>
+      </main>
+    </div>
+    <!-- FOOTER -->
+    <footer>Tahi Circle · Sama-samang matuto. Sama-samang manahi. Sama-samang magbenta. Sama-samang umunlad.<br>Pagkakasunduan ang mga iminungkahing kondisyon bago simulan ang bawat proyekto.</footer>
+    <script>
+    // BUTTON 1: Open the browser print dialog.
+    document.getElementById("print").addEventListener("click", () => {
+      window.print();
+    });
+
+    // BUTTON 2: Download the project fields as a JSON file.
+    // This does not submit information to a server.
+    document.getElementById("save").addEventListener("click", () => {
+      const values = {};
+
+      document.querySelectorAll("input, select").forEach((field) => {
+        values[field.name] = field.value;
+      });
+
+      const projectPlan = {
+        document: "Plano ng proyekto sa Tahi Circle",
+        fields: values
+      };
+
+      const blob = new Blob(
+        [JSON.stringify(projectPlan, null, 2)],
+        { type: "application/json" }
+      );
+
+      const downloadUrl = URL.createObjectURL(blob);
+      const downloadLink = document.createElement("a");
+
+      downloadLink.href = downloadUrl;
+      downloadLink.download = "Tahi_Circle_Project_Plan.json";
+      downloadLink.click();
+
+      setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
+
+      document.getElementById("status").textContent =
+        "Na-download na ang mga sagot sa proyekto. Maaari mo ring i-print ang pahinang ito upang magkaroon ng mababasang kopya.";
+    });
+  </script>
+  </body>
+</html>
